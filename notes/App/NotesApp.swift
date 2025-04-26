@@ -12,14 +12,12 @@ import SwiftUI
 struct NotesApp: App {
     let persistenceController = PersistenceController.shared
     
+
     var body: some Scene {
         WindowGroup {
             let context = persistenceController.container.viewContext
-            let dataHolder = DataHolder(context)
-            
             NoteView()
                 .environment(\.managedObjectContext, context)
-                .environmentObject(dataHolder)
         }
     }
 }

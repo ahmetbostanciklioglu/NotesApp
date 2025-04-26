@@ -27,4 +27,8 @@ extension Image {
     static var TrashIcon: Image {
         Image(systemName: "trash.fill")
     }
+    
+    static var AddIcon: Image {
+        Image(systemName: "plus")
+    }
 }
