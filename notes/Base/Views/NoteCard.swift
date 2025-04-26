@@ -32,5 +32,5 @@ struct NoteCard: View {
 }
 
 #Preview {
-//    NoteCard(viewModel: NoteViewModel(passedTaskItem: NoteItem()), con)
+    NoteCard(viewModel: NoteViewModel(passedTaskItem: NoteItem(), context: Preview.dev.context()))
 }

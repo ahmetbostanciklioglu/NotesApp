@@ -10,10 +10,10 @@ import SwiftUI
 
 struct NoteView: View {
     @Environment(\.managedObjectContext) var context
+    @StateObject private var viewModel = NoteViewModel(passedTaskItem: nil, context: PersistenceController.shared.container.viewContext)
+    
     @FetchRequest(sortDescriptors: [NSSortDescriptor(keyPath: \NoteItem.createdAt, ascending: true)], animation: .default)
     var notes: FetchedResults<NoteItem>   
-    
-    @StateObject private var viewModel = NoteViewModel(passedTaskItem: nil, context: PersistenceController.shared.container.viewContext)
     
     var body: some View {
         NavigationStack {
